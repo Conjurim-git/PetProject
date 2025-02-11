@@ -1,0 +1,33 @@
+﻿@page
+@model PetProject.Pages.FuelAnalysisModel
+@{
+    ViewData["Title"] = "Fuel analysis calculator"; //Не понял зачем эта часть
+    }
+<div class="text-center">
+    <h1 class="display-4">Fuel analysis calculator</h1>
+    <h2>На этой странице предлагается сделать проверку на шлакуемость топлива </h2>
+
+    </h3>@Model.Message<h3/>
+        
+    <form method="post">
+        <p>
+        <input type="number" name="SiO2" placeholder="SiO2, %">
+        <input type="number" name="Al2O3" placeholder="Al2O3, %">
+        <input type="number" name="Ti02" placeholder="TiO2, %">
+        <input type="number" name="CaO" placeholder="CaO, %">
+        <input type="number" name="MgO" placeholder="MgO, %">
+        <input type="number" name="Na2O" placeholder="Na2O, %">
+        <input type="number" name="K2O" placeholder="K2O, %">
+        </p>
+        <p>
+        <input type="submit" value=" = ">
+        </p>
+        <p>
+        <input type="text" name="result" placeholder="K/O" readonly>
+        </p>
+        
+    </form>
+
+    </h3>@Model.ResultMessage<h3 />
+
+<</div>

@@ -1,0 +1,15 @@
+﻿@page
+@model PetProject.Views.Home.FuelAnalysisModel
+
+@{
+    ViewData["Title"] = "Fuel calculator";
+}
+
+@* <div class="text-center">
+    <h1 class="display-4">Here is fuel analysis</h1>
+
+</div> *@
+<form asp-page="Search" method="get">
+    <input name="searchValue" placeholder="Search for a Member..." />
+    <input type="submit" value="Search" />
+</form>
