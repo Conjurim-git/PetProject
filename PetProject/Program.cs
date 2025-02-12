@@ -1,10 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+using PetProject.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddRazorPages();
+string? connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
+builder.Services.AddRazorPages();
+builder.Services.AddDbContext<ApplicationContext>(options => options.UseNpgsql(connectionString));
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())

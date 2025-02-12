@@ -3,28 +3,34 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace PetProject.Pages
 {
+    [IgnoreAntiforgeryToken]
     public class FuelAnalysisModel : PageModel
     {
         [BindProperty]
         
         public string Message { get; private set; } = "";
         public string ResultMessage { get; private set; } = "";
-
+        [BindProperty]
         public string SiO2 { get; set; }
+        [BindProperty]
         public string Al2O3 { get; set; }
+        [BindProperty]
         public string TiO2 { get; set; }
+        [BindProperty]
         public string CaO { get; set; }
+        [BindProperty]
         public string MgO { get; set; }
+        [BindProperty]
         public string Na2O { get; set; }
+        [BindProperty]
         public string Ka2O { get; set; }
 
         
-
-        [IgnoreAntiforgeryToken]
         public void OnGet()
         {
             Message = "¬ведите свои данные в %";
         }
+
         public void OnPost()
         {
 
@@ -42,11 +48,11 @@ namespace PetProject.Pages
             double result = Convert.ToDouble(acidOxides) / Convert.ToDouble(basicOxides);
             if (result > 6)
             {
-                ResultMessage = $"K/O = ,  /ќ > 6 следовательно топливо €вл€етс€ нешлакующим";
+                ResultMessage = $"K/O = {result},  /ќ > 6 следовательно топливо €вл€етс€ нешлакующим";
             }
             else
             {
-                ResultMessage = $"K/O = , K/O < 6 следовательно топливо €вл€етс€ шлакующим";
+                ResultMessage = $"K/O = {result}, K/O < 6 следовательно топливо €вл€етс€ шлакующим";
             }
         }
         ////////////////
