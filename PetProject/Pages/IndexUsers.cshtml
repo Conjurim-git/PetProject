@@ -1,0 +1,12 @@
+﻿@page
+@model PetProject.Pages.IndexUsersModel
+
+<h2>Список пользователей</h2>
+<p><a href="/Create">Добавить пользователя</a></p>
+<table>
+    <tr><th>Имя</th><th>Возраст</th></tr>
+    @foreach (var user in Model.Users)
+    {
+        <tr><td>@user.Name</td><td>@user.Age</td></tr>
+    }
+</table>
